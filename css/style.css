@@ -177,8 +177,24 @@ footer.site .logo img.mark{border-color:var(--gold-400)}
 .lang-btn.active{background:var(--green-700);color:#fff}
 .lang-btn:not(.active):hover{background:rgba(13,92,84,.1)}
 body.lang-ta{font-size:16.5px}
-body.lang-ta h1,body.lang-ta h2,body.lang-ta h3,body.lang-ta h4{line-height:1.22}
+body.lang-ta h1,body.lang-ta h2,body.lang-ta h3,body.lang-ta h4{font-family:var(--ff-body);font-weight:800;line-height:1.26;font-style:normal}
+body.lang-ta .hero h1 .accent{font-style:normal}
 body.lang-ta .hero h1,body.lang-ta h1{letter-spacing:0}
+/* Tamil text must NOT use wide letter-spacing or uppercase (it breaks conjuncts) */
+body.lang-ta .kicker,
+body.lang-ta .hero-stats .l,
+body.lang-ta .stats-grid .l,
+body.lang-ta .proj .ov .tag,
+body.lang-ta .person .role,
+body.lang-ta .info-row .l,
+body.lang-ta .marquee .track,
+body.lang-ta .topbar{
+  letter-spacing:normal;
+  text-transform:none;
+}
+body.lang-ta .kicker{font-weight:700}
+body.lang-ta .hero-stats .l,
+body.lang-ta .stats-grid .l{font-size:.92rem}
 .burger{display:none;width:46px;height:46px;border-radius:12px;background:var(--green-700);position:relative}
 .burger span{position:absolute;left:12px;right:12px;height:2.5px;background:#fff;border-radius:2px;transition:.3s var(--ease)}
 .burger span:nth-child(1){top:16px}
