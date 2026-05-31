@@ -14,6 +14,7 @@
     "nav.home": "முகப்பு",
     "nav.about": "எங்களைப் பற்றி",
     "nav.services": "சேவைகள்",
+    "nav.plots": "மனை &amp; நிலம்",
     "nav.projects": "பணிகள்",
     "nav.contact": "தொடர்பு",
     "btn.quote": "இலவச விலை பெறுங்கள்",
