@@ -496,6 +496,37 @@ body.lang-ta .founder-role{letter-spacing:normal;text-transform:none}
 body.lang-ta .founder-quote{font-style:normal}
 
 /* ===================================================================
+   LIONS CLUB ACTIVITY
+   =================================================================== */
+.lions-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:22px}
+.lions-card{
+  background:var(--paper);border:1px solid rgba(166,124,46,.16);border-radius:var(--r-lg);
+  padding:30px 26px;text-align:center;
+  transition:transform .45s var(--ease),box-shadow .45s var(--ease),border-color .45s;
+}
+.lions-card:hover{transform:translateY(-8px);box-shadow:var(--shadow-md);border-color:rgba(201,162,75,.5)}
+.lions-card .ico{
+  width:62px;height:62px;border-radius:18px;display:grid;place-items:center;margin:0 auto 18px;
+  background:linear-gradient(150deg,var(--green-700),var(--green-900));color:var(--gold-300);
+  box-shadow:0 12px 24px -10px rgba(13,92,84,.6);
+}
+.lions-card .ico svg{width:30px;height:30px}
+.lions-card h3{font-size:1.15rem;margin-bottom:8px}
+.lions-card p{font-size:.95rem}
+/* PDF document row */
+.lions-doc{
+  display:flex;align-items:center;justify-content:space-between;gap:22px;flex-wrap:wrap;
+  margin-top:36px;padding:24px 28px;border-radius:var(--r-lg);
+  background:linear-gradient(135deg,var(--green-800),var(--green-950));color:#fff;
+  box-shadow:var(--shadow-md);
+}
+.lions-doc-txt{display:flex;align-items:center;gap:16px}
+.lions-doc-txt .ico{width:50px;height:50px;border-radius:14px;display:grid;place-items:center;flex:0 0 auto;background:rgba(255,253,248,.12);color:var(--gold-300)}
+.lions-doc-txt .ico svg{width:26px;height:26px}
+.lions-doc-txt b{display:block;font-family:var(--ff-display);font-size:1.1rem;color:#fff}
+.lions-doc-txt small{color:rgba(255,255,255,.7);font-weight:600;font-size:.85rem}
+
+/* ===================================================================
    PLOTS FOR SALE
    =================================================================== */
 .plots{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:26px}
