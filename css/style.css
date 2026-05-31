@@ -6,22 +6,21 @@
 
 /* ---------- Design Tokens ---------- */
 :root{
-  /* MAROON primary (matches RMG office) — tokens kept as --green-* so the
-     whole stylesheet picks them up without renaming every rule */
-  --green-950:#2a070d;
-  --green-900:#3c0d15;
-  --green-800:#54121f;
-  --green-700:#7a1d2b;   /* maroon — primary */
-  --green-600:#97283a;
-  --green-500:#b53b4d;
+  /* peacock green primary + antique gold accent (original theme) */
+  --green-950:#052420;
+  --green-900:#06302c;
+  --green-800:#0a463f;
+  --green-700:#0d5c54;   /* peacock green — primary */
+  --green-600:#127a6e;
+  --green-500:#199b8a;
 
-  --gold-600:#b8862f;
-  --gold-500:#d8a93f;    /* golden yellow — accent (office trim) */
-  --gold-400:#e6bf57;
-  --gold-300:#f3dca0;
+  --gold-600:#a67c2e;
+  --gold-500:#c9a24b;    /* antique gold — accent */
+  --gold-400:#d8b863;
+  --gold-300:#ecd9a4;
 
-  --peacock:#7a1d2b;     /* alias -> maroon */
-  --rust:#7a1d2b;        /* RMG logo maroon */
+  --peacock:#15708a;     /* peacock blue */
+  --rust:#b23b2e;        /* RMG logo red */
 
   /* clean, modern surfaces — white first, soft grey for alternating bands */
   --cream:#ffffff;
