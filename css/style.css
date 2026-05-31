@@ -188,6 +188,9 @@ body.lang-ta{font-size:16.5px}
 body.lang-ta h1,body.lang-ta h2,body.lang-ta h3,body.lang-ta h4{font-family:var(--ff-body);font-weight:800;line-height:1.26;font-style:normal}
 body.lang-ta .hero h1 .accent{font-style:normal}
 body.lang-ta .hero h1,body.lang-ta h1{letter-spacing:0}
+/* Tamil script is taller/wider — smaller hero & heading sizes so it doesn't overflow */
+body.lang-ta .hero h1{font-size:clamp(1.8rem,4.6vw,3.1rem);line-height:1.3}
+body.lang-ta h2{font-size:clamp(1.5rem,3.2vw,2.4rem)}
 /* Tamil text must NOT use wide letter-spacing or uppercase (it breaks conjuncts) */
 body.lang-ta .kicker,
 body.lang-ta .hero-stats .l,
