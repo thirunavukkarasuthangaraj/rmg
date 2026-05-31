@@ -345,8 +345,10 @@ body.nav-open .burger span:nth-child(3){top:22px;transform:rotate(-45deg)}
   border:1px solid rgba(201,162,75,.3);
 }
 .media-frame .scene{width:100%;height:100%}
+/* real photo overlays the illustration; removes itself (onerror) when the file is missing */
+.media-frame .frame-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1}
 .media-frame .badge{
-  position:absolute;left:24px;bottom:24px;background:rgba(255,253,248,.95);
+  position:absolute;left:24px;bottom:24px;z-index:2;background:rgba(255,253,248,.95);
   border-radius:14px;padding:14px 20px;box-shadow:var(--shadow-md);
 }
 .media-frame .badge .n{font-family:var(--ff-display);font-size:1.8rem;color:var(--green-800);font-weight:600;line-height:1}
@@ -405,6 +407,44 @@ body.nav-open .burger span:nth-child(3){top:22px;transform:rotate(-45deg)}
 .note-photos{margin-top:30px;text-align:center;font-size:.9rem;color:var(--muted)}
 
 /* ===================================================================
+   PLOTS FOR SALE
+   =================================================================== */
+.plots{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:26px}
+.btn-sm{padding:10px 20px;font-size:.85rem}
+.plot{
+  background:var(--paper);border:1px solid rgba(166,124,46,.16);border-radius:var(--r-lg);
+  overflow:hidden;display:flex;flex-direction:column;
+  transition:transform .45s var(--ease),box-shadow .45s var(--ease),border-color .45s;
+}
+.plot:hover{transform:translateY(-8px);box-shadow:var(--shadow-md);border-color:rgba(201,162,75,.5)}
+.plot-media{position:relative;aspect-ratio:16/10;overflow:hidden}
+.plot-media img{width:100%;height:100%;object-fit:cover;transition:transform .7s var(--ease)}
+.plot:hover .plot-media img{transform:scale(1.06)}
+.plot-status{
+  position:absolute;top:14px;left:14px;font-size:.72rem;font-weight:800;letter-spacing:.04em;
+  text-transform:uppercase;padding:5px 12px;border-radius:999px;color:#fff;backdrop-filter:blur(4px);
+}
+.plot-status.available{background:rgba(18,122,110,.92)}
+.plot-status.few{background:rgba(166,124,46,.95)}
+.plot-status.sold{background:rgba(178,59,46,.95)}
+.plot-tag{
+  position:absolute;top:14px;right:14px;font-size:.7rem;font-weight:700;letter-spacing:.04em;
+  padding:5px 11px;border-radius:999px;color:var(--green-950);
+  background:rgba(255,253,248,.92);backdrop-filter:blur(4px);
+}
+.plot-body{padding:22px 22px 24px;display:flex;flex-direction:column;gap:14px;flex:1}
+.plot-body h3{font-size:1.25rem}
+.plot-loc{display:flex;align-items:center;gap:8px;font-size:.9rem;color:var(--ink-soft);font-weight:600;margin-top:-4px}
+.plot-loc svg{width:16px;height:16px;color:var(--gold-600);flex:0 0 auto}
+.plot-specs{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;border-top:1px dashed rgba(108,123,119,.28);border-bottom:1px dashed rgba(108,123,119,.28);padding:14px 0}
+.plot-specs .k{display:block;font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:700}
+.plot-specs .v{display:block;font-family:var(--ff-display);font-size:1.02rem;color:var(--green-800);font-weight:600;margin-top:2px}
+.plot-foot{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:auto;flex-wrap:wrap}
+.plot-price{font-family:var(--ff-display);font-size:1.4rem;font-weight:600;color:var(--green-800);line-height:1}
+.plot-price small{font-size:.72rem;font-weight:600;color:var(--muted);letter-spacing:.02em}
+body.lang-ta .plot-status,body.lang-ta .plot-specs .k{letter-spacing:normal;text-transform:none}
+
+/* ===================================================================
    TEAM / CONTACT PEOPLE
    =================================================================== */
 .people{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:22px}
@@ -417,7 +457,10 @@ body.nav-open .burger span:nth-child(3){top:22px;transform:rotate(-45deg)}
   width:78px;height:78px;border-radius:50%;margin:0 auto 16px;display:grid;place-items:center;
   font-family:var(--ff-display);font-size:1.7rem;color:var(--green-950);font-weight:600;
   background:linear-gradient(150deg,var(--gold-300),var(--gold-500));box-shadow:0 10px 22px -10px rgba(166,124,46,.7);
+  position:relative;overflow:hidden;
 }
+/* real photo fills the avatar; if the file is missing it removes itself and the initials show */
+.person .ava img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border-radius:50%}
 .person h3{font-size:1.2rem;margin-bottom:4px}
 .person .role{font-size:.82rem;letter-spacing:.08em;text-transform:uppercase;color:var(--gold-600);font-weight:700;margin-bottom:14px}
 .person a.phone{display:inline-flex;align-items:center;gap:9px;font-weight:700;color:var(--green-800);padding:9px 18px;border-radius:999px;background:rgba(13,92,84,.07);transition:.3s}
@@ -623,6 +666,8 @@ section[id]{scroll-margin-top:130px}
   /* project detail chips wrap cleanly */
   .proj .meta span{font-size:.7rem;padding:4px 9px}
   .gallery{grid-template-columns:1fr}
+  .plots{grid-template-columns:1fr}
+  .plot-specs .v{font-size:.95rem}
   .map-wrap iframe{height:320px}
 }
 @media (prefers-reduced-motion:reduce){
