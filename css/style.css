@@ -407,6 +407,68 @@ body.nav-open .burger span:nth-child(3){top:22px;transform:rotate(-45deg)}
 .note-photos{margin-top:30px;text-align:center;font-size:.9rem;color:var(--muted)}
 
 /* ===================================================================
+   TESTIMONIALS
+   =================================================================== */
+.testimonials{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:24px}
+.tst{
+  background:var(--paper);border:1px solid rgba(166,124,46,.16);border-radius:var(--r-lg);
+  padding:30px 28px;display:flex;flex-direction:column;gap:14px;position:relative;
+  transition:transform .45s var(--ease),box-shadow .45s var(--ease);
+}
+.tst:hover{transform:translateY(-8px);box-shadow:var(--shadow-md)}
+.tst::before{content:"\201C";position:absolute;top:10px;right:24px;font-family:var(--ff-display);font-size:4.5rem;color:rgba(201,162,75,.22);line-height:1}
+.tst .stars{color:var(--gold-500);font-size:1.05rem;letter-spacing:2px}
+.tst blockquote{font-size:1rem;color:var(--ink-soft);line-height:1.65;font-style:italic}
+.tst figcaption{display:flex;align-items:center;gap:12px;margin-top:auto}
+.tst figcaption .ava{
+  width:46px;height:46px;border-radius:50%;display:grid;place-items:center;flex:0 0 auto;
+  font-family:var(--ff-display);font-weight:600;color:var(--green-950);
+  background:linear-gradient(150deg,var(--gold-300),var(--gold-500));
+}
+.tst figcaption b{display:block;font-family:var(--ff-display);color:var(--green-800);font-size:1.02rem}
+.tst figcaption small{color:var(--muted);font-weight:600;font-size:.84rem}
+body.lang-ta .tst blockquote{font-style:normal}
+
+/* footer social icons */
+footer.site .social{display:flex;gap:12px;margin-top:20px}
+footer.site .social a{
+  width:40px;height:40px;border-radius:50%;display:grid;place-items:center;
+  background:rgba(255,255,255,.08);color:var(--gold-300);transition:.3s;
+}
+footer.site .social a:hover{background:var(--gold-500);color:var(--green-950);transform:translateY(-3px)}
+footer.site .social svg{width:19px;height:19px}
+
+/* ===================================================================
+   FOUNDER / CHAIRMAN
+   =================================================================== */
+.founder-photo{
+  position:relative;border-radius:var(--r-lg);overflow:hidden;aspect-ratio:4/4.4;
+  background:linear-gradient(160deg,var(--green-700),var(--green-950));
+  box-shadow:var(--shadow-lg);border:1px solid rgba(201,162,75,.3);
+  display:grid;place-items:center;
+}
+.founder-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center top;z-index:1}
+.founder-photo img.is-missing{display:none}
+.founder-initials{font-family:var(--ff-display);font-size:4.5rem;font-weight:600;color:var(--gold-300)}
+.founder-photo img:not(.is-missing)+.founder-initials{display:none}
+.founder-chip{
+  position:absolute;left:18px;bottom:18px;z-index:2;display:flex;align-items:center;gap:11px;
+  background:rgba(255,253,248,.95);backdrop-filter:blur(6px);border-radius:14px;padding:12px 16px;box-shadow:var(--shadow-md);
+}
+.founder-chip svg{width:30px;height:30px;color:var(--gold-600);flex:0 0 auto}
+.founder-chip b{display:block;font-family:var(--ff-display);font-size:1.02rem;color:var(--green-800)}
+.founder-chip small{color:var(--muted);font-weight:600;font-size:.8rem}
+.founder-role{font-size:.82rem;letter-spacing:.08em;text-transform:uppercase;color:var(--gold-600);font-weight:700;margin:6px 0 18px}
+.founder-quote{
+  margin:24px 0;padding:18px 22px;border-left:4px solid var(--gold-500);
+  background:rgba(13,92,84,.05);border-radius:0 12px 12px 0;
+  font-family:var(--ff-display);font-style:italic;font-size:1.12rem;color:var(--green-800);line-height:1.5;
+}
+.founder-actions{margin-top:8px}
+body.lang-ta .founder-role{letter-spacing:normal;text-transform:none}
+body.lang-ta .founder-quote{font-style:normal}
+
+/* ===================================================================
    PLOTS FOR SALE
    =================================================================== */
 .plots{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:26px}
@@ -447,23 +509,46 @@ body.lang-ta .plot-status,body.lang-ta .plot-specs .k{letter-spacing:normal;text
 /* ===================================================================
    TEAM / CONTACT PEOPLE
    =================================================================== */
-.people{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:22px}
+/* vertical photo cards (large portrait photo on top, details below) */
+.people{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:24px}
+/* Row 1 — founder alone, centered */
+.people.founder-row{grid-template-columns:minmax(260px,340px);justify-content:center}
+/* Row 2 — three partners */
+.people.partners-row{grid-template-columns:repeat(3,minmax(220px,1fr));max-width:880px;margin:0 auto}
+/* "Our Partners" sub-heading between the rows */
+.team-sub{display:flex;align-items:center;justify-content:center;gap:16px;margin:42px auto 26px;
+  font-size:.8rem;font-weight:800;letter-spacing:.22em;text-transform:uppercase;color:var(--gold-600)}
+.team-sub .vel-divider{flex:0 0 60px}
+body.lang-ta .team-sub{letter-spacing:normal;text-transform:none}
+@media (max-width:760px){
+  .people.partners-row{grid-template-columns:1fr;max-width:340px}
+}
 .person{
-  background:var(--paper);border-radius:var(--r-md);padding:28px 26px;text-align:center;
-  border:1px solid rgba(166,124,46,.16);transition:transform .4s var(--ease),box-shadow .4s var(--ease);
+  background:var(--paper);border-radius:var(--r-lg);text-align:center;overflow:hidden;
+  display:flex;flex-direction:column;
+  border:1px solid rgba(166,124,46,.16);transition:transform .4s var(--ease),box-shadow .4s var(--ease),border-color .4s;
 }
 .person:hover{transform:translateY(-8px);box-shadow:var(--shadow-md)}
+/* big photo banner — initials show until images/team-*.jpg is added */
 .person .ava{
-  width:78px;height:78px;border-radius:50%;margin:0 auto 16px;display:grid;place-items:center;
-  font-family:var(--ff-display);font-size:1.7rem;color:var(--green-950);font-weight:600;
-  background:linear-gradient(150deg,var(--gold-300),var(--gold-500));box-shadow:0 10px 22px -10px rgba(166,124,46,.7);
+  width:100%;aspect-ratio:1/1.05;border-radius:0;margin:0;display:grid;place-items:center;
+  font-family:var(--ff-display);font-size:3.4rem;color:var(--green-950);font-weight:600;
+  background:linear-gradient(155deg,var(--gold-300),var(--gold-500));
   position:relative;overflow:hidden;
 }
-/* real photo fills the avatar; if the file is missing it removes itself and the initials show */
-.person .ava img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border-radius:50%}
-.person h3{font-size:1.2rem;margin-bottom:4px}
-.person .role{font-size:.82rem;letter-spacing:.08em;text-transform:uppercase;color:var(--gold-600);font-weight:700;margin-bottom:14px}
-.person a.phone{display:inline-flex;align-items:center;gap:9px;font-weight:700;color:var(--green-800);padding:9px 18px;border-radius:999px;background:rgba(13,92,84,.07);transition:.3s}
+.person .ava img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center top;border-radius:0}
+.person h3{font-size:1.25rem;margin:18px 20px 4px}
+.person .role{font-size:.78rem;letter-spacing:.07em;text-transform:uppercase;color:var(--gold-600);font-weight:700;margin:0 18px 16px;line-height:1.5}
+.person a.phone{display:inline-flex;align-items:center;justify-content:center;gap:9px;font-weight:700;color:var(--green-800);margin:auto 20px 24px;padding:11px 18px;border-radius:999px;background:rgba(13,92,84,.07);transition:.3s}
+/* featured founder card — gold frame + ribbon */
+.person.featured{border:2px solid var(--gold-500);box-shadow:0 18px 40px -18px rgba(166,124,46,.55)}
+.person.featured .ava::after{
+  content:"★ FOUNDER";position:absolute;top:14px;left:14px;z-index:2;
+  font-size:.66rem;font-weight:800;letter-spacing:.12em;color:var(--green-950);
+  background:rgba(255,253,248,.95);padding:5px 11px;border-radius:999px;box-shadow:var(--shadow-sm);
+}
+body.lang-ta .person .role{letter-spacing:normal;text-transform:none}
+body.lang-ta .person.featured .ava::after{content:"★ நிறுவனர்";letter-spacing:normal}
 .person a.phone:hover{background:var(--green-700);color:#fff}
 .person a.phone svg{width:16px;height:16px}
 
