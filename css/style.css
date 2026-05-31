@@ -559,6 +559,7 @@ section[id]{scroll-margin-top:130px}
     z-index:99;box-shadow:var(--shadow-lg);
   }
   body.nav-open .menu{transform:translateX(0)}
+  .menu{padding-top:72px}
   .menu a{color:rgba(255,255,255,.85);padding:14px 16px;border-radius:12px;font-size:1.05rem}
   .menu a::after{display:none}
   .menu a:hover,.menu a.active{background:rgba(255,255,255,.08);color:#fff}
@@ -568,21 +569,61 @@ section[id]{scroll-margin-top:130px}
   .nav-overlay{position:fixed;inset:0;background:rgba(5,36,32,.5);opacity:0;visibility:hidden;transition:.35s;z-index:98}
   body.nav-open .nav-overlay{opacity:1;visibility:visible}
 }
+@media (max-width:760px){
+  /* topbar: keep it slim, show only the phone number neatly */
+  .topbar{font-size:.76rem}
+  .topbar .container{gap:10px;justify-content:center}
+  .topbar .blessing{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:58vw}
+  .topbar .tb-right{gap:0}
+
+  /* pill nav: tighter so logo + lang + burger always fit */
+  header.site{padding-inline:12px}
+  .nav{padding:8px 8px 8px 14px;gap:12px}
+  .logo{gap:9px}
+  .logo .mark,.logo img.mark{width:42px;height:42px}
+  .logo .txt .name{font-size:1.12rem}
+  .logo .txt .sub{font-size:.52rem;letter-spacing:.16em}
+  .nav-cta{gap:8px}
+  .lang-switch{flex:0 0 auto}
+
+  /* hero: comfortable height + readable type on phones */
+  .hero{min-height:auto;padding:clamp(120px,30vw,150px) 0 clamp(56px,14vw,80px)}
+  .hero h1{font-size:clamp(2.4rem,10.5vw,3.4rem)}
+  .hero .lead{font-size:1.06rem}
+  .hero-art{opacity:.12}
+  .hero-stats{gap:18px 26px}
+  .hero-stats .stat .n{font-size:1.75rem}
+
+  /* floating buttons: icon-only, tidy stacking */
+  .wa-fab{right:16px;bottom:16px;width:54px;height:54px}
+  .wa-fab svg{width:27px;height:27px}
+  .wa-fab .wa-label{display:none}
+  .wa-fab:hover{width:54px;padding:0}
+  .fab{right:16px;bottom:80px;width:54px;height:54px}
+
+  /* section rhythm + cards */
+  .section{padding:clamp(54px,12vw,80px) 0}
+  .cards,.gallery,.people,.steps{gap:18px}
+  .card-service{padding:28px 24px}
+  .cta .container{flex-direction:column;align-items:flex-start;text-align:left}
+  .cta .btn{width:100%;justify-content:center}
+}
 @media (max-width:480px){
   body{font-size:16px}
   .stats-grid{grid-template-columns:1fr 1fr;gap:30px 16px}
-  footer.site .top{grid-template-columns:1fr}
-  .hero-stats{gap:22px}
+  footer.site .top{grid-template-columns:1fr;gap:30px}
   .cta .container{flex-direction:column;align-items:flex-start}
-}
-@media (max-width:760px){
-  .topbar .container{gap:10px}
-  .topbar .blessing{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:60vw}
-  .nav{padding-left:16px}
-  .wa-fab .wa-label{display:none}
-  .wa-fab:hover{width:60px;padding:0}
-  .hero h1{font-size:clamp(2.5rem,11vw,3.4rem)}
-  .hero-art{opacity:.14}
+  /* on very small phones the sub-line under the logo is dropped to save room */
+  .logo .txt .sub{display:none}
+  /* hero stats: 3 across stays readable as a centered row */
+  .hero-stats{gap:14px 18px}
+  .hero-stats .stat{flex:1 1 28%;min-width:84px}
+  .hero-stats .stat .n{font-size:1.55rem}
+  .hero-stats .stat .l{font-size:.72rem}
+  /* project detail chips wrap cleanly */
+  .proj .meta span{font-size:.7rem;padding:4px 9px}
+  .gallery{grid-template-columns:1fr}
+  .map-wrap iframe{height:320px}
 }
 @media (prefers-reduced-motion:reduce){
   *{animation:none!important;transition-duration:.01ms!important}
