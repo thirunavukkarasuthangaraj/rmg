@@ -1,4 +1,45 @@
+# robots.txt for RMG Enterprisses — https://rmgenterprisses.com
+# All search engines are welcome to crawl and index every page.
+
 User-agent: *
 Allow: /
 
+# Major search engine crawlers (explicit)
+User-agent: Googlebot
+Allow: /
+
+User-agent: Googlebot-Image
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: Yandex
+Allow: /
+
+User-agent: Baiduspider
+Allow: /
+
+User-agent: Sogou
+Allow: /
+
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: Twitterbot
+Allow: /
+
+User-agent: WhatsApp
+Allow: /
+
+User-agent: LinkedInBot
+Allow: /
+
+# Sitemap location
 Sitemap: https://rmgenterprisses.com/sitemap.xml
