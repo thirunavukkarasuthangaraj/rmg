@@ -348,6 +348,13 @@ body.nav-open .burger span:nth-child(3){top:22px;transform:rotate(-45deg)}
 .media-frame .scene{width:100%;height:100%}
 /* real photo overlays the illustration; removes itself (onerror) when the file is missing */
 .media-frame .frame-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1}
+/* office photo slideshow (fade) */
+.frame-slider{position:absolute;inset:0;z-index:1}
+.frame-slider .slide{opacity:0;transition:opacity .9s var(--ease);z-index:1}
+.frame-slider .slide.is-active{opacity:1;z-index:2}
+.frame-dots{position:absolute;left:0;right:0;bottom:16px;z-index:3;display:flex;gap:8px;justify-content:center}
+.frame-dots button{width:9px;height:9px;border-radius:50%;background:rgba(255,255,255,.5);transition:background .3s,transform .3s;cursor:pointer}
+.frame-dots button.active{background:var(--gold-400);transform:scale(1.25)}
 .media-frame .badge{
   position:absolute;left:24px;bottom:24px;z-index:2;background:rgba(255,253,248,.95);
   border-radius:14px;padding:14px 20px;box-shadow:var(--shadow-md);

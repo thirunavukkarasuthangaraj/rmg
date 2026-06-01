@@ -259,7 +259,13 @@
           <circle cx="60" cy="230" r="26" fill="#127a6e"/><rect x="56" y="230" width="8" height="40" fill="#6b4423"/>
           <circle cx="350" cy="235" r="22" fill="#127a6e"/><rect x="346" y="235" width="8" height="36" fill="#6b4423"/>
         </svg>
-        <div class="badge"><div class="n" data-i18n="badge.trusted">Trusted</div><div class="l" data-i18n="badge.decades">Three decades</div></div>
+        <!-- office photo slideshow: drop images/office1.jpg & office2.jpg; each falls back to a real stock photo -->
+        <div class="frame-slider" data-slider>
+          <img class="frame-photo slide is-active" src="images/office1.png" alt="RMG Enterprisses office, Valasaravakkam, Chennai" loading="lazy">
+          <img class="frame-photo slide" src="images/office2.webp" alt="RMG Enterprisses office interior, Chennai" loading="lazy">
+          <div class="frame-dots" aria-hidden="true"></div>
+        </div>
+        <div class="badge"><div class="n" data-i18n="badge.trusted">Trusted</div><div class="l" data-i18n="badge.decades">Since 1983</div></div>
       </div>
     </div>
 
@@ -316,15 +322,15 @@
     </div>
     <div class="gallery">
       <article class="proj" data-reveal data-delay="1">
-        <img class="scene" src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80&auto=format&fit=crop" alt="Independent home built by RMG Enterprisses" loading="lazy">
+        <img class="scene" src="images/house.jpg" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&q=80&auto=format&fit=crop'" alt="Independent house built by RMG Enterprisses, Chennai" loading="lazy">
         <div class="ov"><span class="tag" data-i18n="pj1.tag">Housing</span><h3 data-i18n="pj1.t">Independent Homes</h3><p data-i18n="pj1.p">Strong, comfortable houses built for comfortable living.</p></div>
       </article>
       <article class="proj" data-reveal data-delay="2">
-        <img class="scene" src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=800&q=80&auto=format&fit=crop" alt="DTCP-approved plotted layout by RMG Enterprisses" loading="lazy">
+        <img class="scene" src="images/landsite.jpg" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1542889601-399c4f3a8402?w=800&q=80&auto=format&fit=crop'" alt="DTCP-approved plotted land layout by RMG Enterprisses, Chennai" loading="lazy">
         <div class="ov"><span class="tag" data-i18n="pj2.tag">Land Development</span><h3 data-i18n="pj2.t">Plotted Layouts</h3><p data-i18n="pj2.p">Well-planned plots, ready to build on.</p></div>
       </article>
       <article class="proj" data-reveal data-delay="3">
-        <img class="scene" src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&q=80&auto=format&fit=crop" alt="Earth-moving and site preparation by RMG Enterprisses" loading="lazy">
+        <img class="scene" src="images/jcb.jpg" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=800&q=80&auto=format&fit=crop'" alt="JCB earth moving and site preparation by RMG Enterprisses" loading="lazy">
         <div class="ov"><span class="tag" data-i18n="pj3.tag">Earth Movers</span><h3 data-i18n="pj3.t">Site Preparation</h3><p data-i18n="pj3.p">Digging, levelling and clearing with our fleet.</p></div>
       </article>
     </div>
@@ -382,8 +388,8 @@
     <div class="testimonials">
       <figure class="tst" data-reveal data-delay="1">
         <div class="stars" aria-label="5 out of 5">★★★★★</div>
-        <blockquote data-i18n="tst1.t">"They levelled and prepared our site exactly on time and the price was honest. RMG's JCB team is hardworking and very professional."</blockquote>
-        <figcaption><span class="ava">AK</span><span><b>A. Kumar</b><small data-i18n="tst1.l">Site work · Poonamallee</small></span></figcaption>
+        <blockquote data-i18n="tst1.t">"We purchased a plot through RMG and the whole process was smooth and honest. The title was clear, the price was fair, and they guided us patiently from site visit to registration."</blockquote>
+        <figcaption><span class="ava">AK</span><span><b>A. Kumar</b><small data-i18n="tst1.l">Plot buyer · Poonamallee</small></span></figcaption>
       </figure>
       <figure class="tst" data-reveal data-delay="2">
         <div class="stars" aria-label="5 out of 5">★★★★★</div>

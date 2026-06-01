@@ -107,4 +107,37 @@
       form.reset();
     });
   }
+
+  /* ---- Image slideshow ([data-slider] with .slide children) ---- */
+  document.querySelectorAll("[data-slider]").forEach(function (slider) {
+    var slides = slider.querySelectorAll(".slide");
+    if (slides.length < 2) return;
+    var dotsWrap = slider.querySelector(".frame-dots");
+    var dots = [];
+    if (dotsWrap) {
+      slides.forEach(function (s, i) {
+        var b = document.createElement("button");
+        b.type = "button";
+        b.setAttribute("aria-label", "Show image " + (i + 1));
+        if (i === 0) b.classList.add("active");
+        b.addEventListener("click", function () { go(i); });
+        dotsWrap.appendChild(b);
+        dots.push(b);
+      });
+    }
+    var current = 0, timer;
+    function go(n) {
+      slides[current].classList.remove("is-active");
+      if (dots[current]) dots[current].classList.remove("active");
+      current = (n + slides.length) % slides.length;
+      slides[current].classList.add("is-active");
+      if (dots[current]) dots[current].classList.add("active");
+      restart();
+    }
+    function restart() {
+      clearInterval(timer);
+      timer = setInterval(function () { go(current + 1); }, 4000);
+    }
+    restart();
+  });
 })();
