@@ -449,6 +449,8 @@ footer.site .social svg{width:19px;height:19px}
 /* ===================================================================
    CHAIRMAN INTRO (home section 2)
    =================================================================== */
+/* founder section sits first on the home page — clear the fixed header */
+.chairman-intro{padding-top:clamp(150px,17vw,200px)}
 .chairman-intro .split{align-items:center}
 .chair-photo{
   position:relative;border-radius:var(--r-lg);overflow:hidden;aspect-ratio:4/4.3;
