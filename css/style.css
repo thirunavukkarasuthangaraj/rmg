@@ -472,6 +472,10 @@ footer.site .social svg{width:19px;height:19px}
 .chair-name b{font-family:var(--ff-display);font-size:1.3rem;color:var(--ink);display:block}
 .chair-name span{font-size:.82rem;letter-spacing:.06em;text-transform:uppercase;color:var(--gold-600);font-weight:700}
 .chairman-intro p{margin-top:14px}
+
+/* Lions honouring document — shown visually inline (not a download) */
+.lions-pages{display:grid;gap:18px;max-width:880px;margin:24px auto 0;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.lions-pages img{width:100%;height:auto;border:1px solid #e7e1d4;border-radius:12px;box-shadow:0 14px 30px -18px rgba(6,48,44,.45);background:#fff}
 .chair-quote{margin:22px 0;padding:16px 20px;border-left:4px solid var(--gold-500);background:var(--surface);border-radius:0 12px 12px 0;font-family:var(--ff-display);font-style:italic;font-size:1.1rem;color:var(--green-800);line-height:1.5}
 .chair-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px}
 body.lang-ta .chair-name span{letter-spacing:normal;text-transform:none}
