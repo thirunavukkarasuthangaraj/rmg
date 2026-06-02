@@ -17,7 +17,7 @@
     "nav.plots": "மனை &amp; நிலம்",
     "nav.projects": "பணிகள்",
     "nav.contact": "தொடர்பு",
-    "btn.quote": "இலவச விலை பெறுங்கள்",
+    "btn.quote": "இலவச மதிப்பீடு",
     "btn.callnow": "இப்போது அழைக்கவும்",
     "foot.h.company": "நிறுவனம்",
     "foot.h.services": "சேவைகள்",
