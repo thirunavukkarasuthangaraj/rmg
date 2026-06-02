@@ -474,6 +474,10 @@ footer.site .social svg{width:19px;height:19px}
 /* Lions honouring document — shown visually inline (not a download) */
 .lions-pages{display:grid;gap:18px;max-width:880px;margin:24px auto 0;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
 .lions-pages img{width:100%;height:auto;border:1px solid #e7e1d4;border-radius:12px;box-shadow:0 14px 30px -18px rgba(6,48,44,.45);background:#fff}
+
+/* approved layout plan — shown inline on the plots page */
+.layout-plan{max-width:980px;margin:8px auto 0;background:#fff;border:1px solid #e7e1d4;border-radius:14px;padding:14px;box-shadow:0 16px 36px -20px rgba(6,48,44,.45)}
+.layout-plan img{width:100%;height:auto;border-radius:8px;display:block}
 .chair-quote{margin:22px 0;padding:16px 20px;border-left:4px solid var(--gold-500);background:var(--surface);border-radius:0 12px 12px 0;font-family:var(--ff-display);font-style:italic;font-size:1.1rem;color:var(--green-800);line-height:1.5}
 .chair-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px}
 body.lang-ta .chair-name span{letter-spacing:normal;text-transform:none}
